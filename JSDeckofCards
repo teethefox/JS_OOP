@@ -1,0 +1,63 @@
+var Deck = function Deck(){
+  this.deck= [];
+  this.reset();
+
+};
+
+Deck.prototype.reset=function(){
+  this.deck=[]
+  var suits=['clubs','spades','hearts','diamonds'];
+  var pips=[2,3,4,5,6,7,8,9,10,'j','q','k','a'];
+  for(var suit in suits){
+    for(var pip in pips){
+      this.deck.push(pips[pip]+ 'of'+suits[suit]);
+    }
+  }return this;
+};
+
+Deck.prototype.shuffle=function(){
+  var m=this.deck.length, t, i;
+  while(m){
+    i=Math.floor(Math.random()* m --);
+    t=this.deck[m];
+    this.deck[m]=this.deck[i];
+    this.deck[i]=t;
+  }
+  return this;
+};
+Deck.prototype.deal=function(){
+  return this.deck.pop();
+};
+var Player = function Player(name){
+  this.name=name;
+  this.hand=[];
+}; Player.prototype.draw=function(){
+  this.hand.push(decl1.deal());
+  return this;
+}; Player.prototype.discard=function(){
+  return this.hand.pop();
+};
+var deck1= new Deck();
+console.log(deck1.deal())
+console.log(deck1.deck.length)
+// ES6
+// class Deck(){
+//   constructor(){
+//     this.deck=[];
+//     this.reset();
+//   }
+//   reset(){
+//     this.deck=[]
+//   let suits=['clubs','spades','hearts','diamonds'];
+//   let pips=[2,3,4,5,6,7,8,9,10,'j','q','k','a'];
+//   for(let suit in suits){
+//     for(let pip in pips){
+//       this.deck.push(pips[pip]+ 'of'+suits[suit]);
+//     }
+//   }return this;
+// }
+//   }
+  
+  
+  
+  
