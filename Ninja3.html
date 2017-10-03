@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>// sayName() - This should log that Ninja's name to the console.
+            // showStats() - This should show the Ninja's Strength and Speed, as well as their health.
+            // // drinkSake() - This should add +10 Health to the Ninja
+            // Extend the Ninja class and create the Sensei class. A Sensei should have 200 Health, 10 speed, and 10 strength by default. In addition, a Sensei should have a new attribute called wisdom, and the default should be 10. Finally, add the speakWisdom() method. speakWisdom() should call the drinkSake() method from the Ninja class, before console.logging a wise message.
+            
+            class Ninja {
+              constructor(name){
+              this.name=name
+              health=100;
+              speed=3;
+              strength=3;
+            } sayName(){
+              console.log(this.name)
+            } showStats(){
+              console.log(health, strength, speed)
+            }drinkSake(){
+              health += 10;
+              console.log("new health:", health)
+            }
+            } class Sensei extends Ninja{
+              constructor(name){
+                super(name);
+                health=200;
+                speed=10;
+                strength=10;
+                this.wisdom=10;
+                
+              }speakWisdom(){
+                let wisdom=super.drinkSake();
+                console.log("insert yoda quote")
+              }
+            }
+            let ninja1= new Ninja('me')
+            ninja1.sayName()
+            ninja1.showStats()
+            ninja1.drinkSake()
+            let sensei = new Sensei('MEEEE')
+            sensei.speakWisdom()
+            sensei.showStats()
+        </script>
+    
+</body>
+</html>
